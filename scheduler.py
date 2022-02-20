@@ -33,3 +33,14 @@ if __name__ == '__main__':
     task_list.append(my_task(name="thread_1", priority =1, period= 10 , execution_time=10 , last_execution=last_execution ))
     task_list.append(my_task(name="thread_2", priority =1, period= 20 , execution_time=5 , last_execution=last_execution ))
     task_list.append(my_task(name="thread_3", priority =1, period= 60 , execution_time=20 , last_execution=last_execution ))
+
+    while(1):
+        time_now = datetime.datetime.now()
+
+        print("\nScheduler tick :" +time_now.strftime("%H:%M:%S"))
+
+        task_to_run = None
+        earliest_deadline = time_now + datetime.timedelta(hours=1)
+
+        for current_task in task_list:
+            
